@@ -1,0 +1,62 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+bootRun{
+
+}
+
+group = 'com.theheavenscode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+ 
+
+dependencies {
+	 compile fileTree(dir: 'libs', include: ['*.jar'])
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+	// https://mvnrepository.com/artifact/org.openpnp/opencv
+// 	implementation group: 'org.openpnp', name: 'opencv', version: '3.2.0-0'
+
+
+// // https://mvnrepository.com/artifact/org.bytedeco.javacpp-presets/opencv
+// 	implementation group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '4.0.1-1.4.4'
+
+// // https://mvnrepository.com/artifact/org.bytedeco/opencv
+	// implementation group: 'org.bytedeco', name: 'opencv', version: '4.0.1-1.5'
+
+    implementation group: 'org.bytedeco', name: 'javacv-platform', version: '1.5'
+
+ 
+
+
+
+	//  web cam drivers and libraries
+	// implementation 'com.github.sarxos:webcam-capture:0.3.10'
+
+	// https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture-driver-ipcam
+	implementation group: 'com.github.sarxos', name: 'webcam-capture-driver-ipcam', version: '0.3.12'
+
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
+ 
+  	compile files('libs/bridj-0.7-20140918.jar')
+
+	// https://mvnrepository.com/artifact/org.scream3r/jssc
+	compile group: 'org.scream3r', name: 'jssc', version: '2.8.0'
+
+	    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+
+
+}
